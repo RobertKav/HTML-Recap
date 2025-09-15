@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My GitHub Website</title>
+  <link rel="stylesheet" href="my github.css">
+</head>
+
+<body>
+  <h2 id="typing"></h2>
+
+  <!-- Personal Details -->
+  <section id="personal">
+    <h2>Personal Details</h2>
+    <div class="personal-card">
+      <img src="https://via.placeholder.com/150" alt="Your Photo">
+      <div class="info">
+        <h3>Robert Kavanagh</h3>
+        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> C00282028@Setu.ie</p>
+        <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +353 86 082 9075</p>
+        <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Cronebane Avoca Co. Wicklow</p>
+        <p><i class="fas fa-mail-bulk"></i> <strong>Eircode:</strong> Y14 X757</p>
+
+        <!-- Sub-box for bio -->
+        <div class="bio-box">
+          <p>
+            I'm a passionate web developer who loves creating modern, responsive, 
+            and interactive websites. Always learning and experimenting with new tech.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+      <div class="skill"><i class="fab fa-html5"></i><p>HTML</p></div>
+      <div class="skill"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+      <div class="skill"><i class="fab fa-js"></i><p>JavaScript</p></div>
+      <div class="skill"><i class="fab fa-github"></i><p>GitHub</p></div>
+      <div class="skill"><i class="fas fa-paint-brush"></i><p>Design</p></div>
+    </div>
+  </section>
+
+  <!-- Back to Top -->
+  <button id="backToTop">↑</button>
+
+  <script>
+    // Typing effect
+    const text = "Hi, I'm Robert, a Web Developer 👨‍💻";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+    window.onload = typeWriter;
+
+    // Scroll animation for personal card
+    const personalCard = document.querySelector(".personal-card");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+    observer.observe(personalCard);
+
+    // Back to top button
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
+
+    
+   
+
+
+
+
+
