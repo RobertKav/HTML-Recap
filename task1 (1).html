@@ -7,19 +7,32 @@
 </head>
 <body bgcolor='lightgrey'> <!--puts background color on the webpage -->
 <form class="form">
-<center><h2>Customer Form</h2></center>
+<center><h2>My Details</h2></center>
 <!-- fieldset for personal information -->
 <fieldset>
 <legend>Personal Information</legend>
 <!-- html for inputbox -->
 <div class="name box">
-<!-- label and input for firstname -->
-<label for="name">Full name: </label> 
-<input type="text" name="name" id="name" placeholder="Enter full name" title="Enter your first name then surname" pattern="[a-zA-z0-9 .]*" required/>
+    <!-- label and input for firstname and surname -->
+    <label for="name">Full name: </label> 
+    <input type="text" name="name" id="name" placeholder="Enter full name" title="Enter your first name then surname" pattern="[a-zA-z0-9 .]*" required/>
+</div>
+<br>
+<div class="address box">
+    <!-- label and input for my address -->
+    <label for="address">Address: </label>
+     <input type="text" name="address" id="address" placeholder="Enter your address" pattern="[a-zA-z0-9 .,]*" required/>
+</div>
+<br>
+<div class="phone box">
+    <!-- label and input for phone number -->
+    <label for="phone">Phone Number: </label> 
+    <input type="text" name="phone" id="phone" placeholder="Enter Phone Number" title="Enter only numbers" pattern="[0-9() -]*"/>
 </div>
 <br>
 
 
     
    
+
 
