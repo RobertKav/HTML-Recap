@@ -4,25 +4,31 @@
 <head>
   <meta charset="UTF-8">
   <title>My GitHub Website</title>
+  <!-- Link to your external CSS file -->
   <link rel="stylesheet" href="my github.css">
 </head>
 
 <body>
+  <!-- Typing animation text will appear here -->
   <h2 id="typing"></h2>
 
-  <!-- Personal Details -->
+  <!-- Personal Details Section -->
   <section id="personal">
     <h2>Personal Details</h2>
     <div class="personal-card">
+      <!-- Placeholder image for profile -->
       <img src="https://via.placeholder.com/150" alt="Your Photo">
+
+      <!-- Info box next to the image -->
       <div class="info">
         <h3>Robert Kavanagh</h3>
+        <!-- Using font-awesome icons for styling -->
         <p><i class="fas fa-envelope"></i> <strong>Email:</strong> C00282028@Setu.ie</p>
         <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +353 86 082 9075</p>
         <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Cronebane Avoca Co. Wicklow</p>
         <p><i class="fas fa-mail-bulk"></i> <strong>Eircode:</strong> Y14 X757</p>
 
-        <!-- Sub-box for bio -->
+        <!-- Highlighted box for short biography -->
         <div class="bio-box">
           <p>
             I'm a passionate web developer who loves creating modern, responsive, 
@@ -37,6 +43,7 @@
   <section class="skills">
     <h2>My Skills</h2>
     <div class="skills-grid">
+      <!-- Each skill has an icon + text -->
       <div class="skill"><i class="fab fa-html5"></i><p>HTML</p></div>
       <div class="skill"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
       <div class="skill"><i class="fab fa-js"></i><p>JavaScript</p></div>
@@ -45,50 +52,55 @@
     </div>
   </section>
 
-  <!-- Back to Top -->
+  <!-- Floating Back-to-Top Button -->
   <button id="backToTop">↑</button>
 
   <script>
-    // Typing effect
-    const text = "Hi, I'm Robert, a Web Developer 👨‍💻";
+    // -----------------------------
+    // Typing effect for the intro
+    // -----------------------------
+    const text = "Hi, I'm Robert, a Web Developer 👨‍💻"; // message to type out
     let i = 0;
     function typeWriter() {
       if (i < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(i);
+        document.getElementById("typing").innerHTML += text.charAt(i); // add one letter
         i++;
-        setTimeout(typeWriter, 100);
+        setTimeout(typeWriter, 100); // delay between letters (100ms)
       }
     }
-    window.onload = typeWriter;
+    window.onload = typeWriter; // start typing when page loads
 
+    // -----------------------------
     // Scroll animation for personal card
+    // -----------------------------
     const personalCard = document.querySelector(".personal-card");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-          observer.unobserve(entry.target);
+        if (entry.isIntersecting) { // when card is visible on screen
+          entry.target.classList.add("show"); // add CSS animation class
+          observer.unobserve(entry.target); // stop observing after animation
         }
       });
     });
     observer.observe(personalCard);
 
+    // -----------------------------
     // Back to top button
+    // -----------------------------
     const backToTop = document.getElementById("backToTop");
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 200) {
-        backToTop.style.display = "block";
+      if (window.scrollY > 200) { // if scrolled down 200px
+        backToTop.style.display = "block"; // show button
       } else {
-        backToTop.style.display = "none";
+        backToTop.style.display = "none"; // hide button
       }
     });
     backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: "smooth" }); // scroll up smoothly
     });
   </script>
 </body>
 </html>
-
     
    
 
