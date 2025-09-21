@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #d9a7c7, #fffcdc);
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* --- Projects Section --- */
+.projects {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* --- Project Card --- */
+.project-card {
+  position: relative;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  padding: 25px 20px;
+  border-radius: 20px 0 20px 0; /* angled corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  min-height: 220px;
+}
+
+.project-card h3 {
+  margin: 15px 0 10px;
+  color: #222;
+}
+
+.project-card p {
+  color: #444;
+}
+
+/* Icons */
+.project-card i {
+  font-size: 2.5rem;
+  color: #d35400;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Hover lift */
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+/* --- Hover Overlay --- */
+.project-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(52, 73, 94, 0.95);
+  color: #fff;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 20px 0 20px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  /* text safety */
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.project-card:hover .project-info {
+  opacity: 1;
+}
+
+/* --- Coming Soon Cards --- */
+.coming-soon {
+  background: linear-gradient(135deg, #bdc3c7, #2c3e50);
+  color: #eee;
+}
+
+.coming-soon i {
+  color: #f1c40f;
+}
